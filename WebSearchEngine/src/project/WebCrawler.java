@@ -34,14 +34,14 @@ public class WebCrawler {
 			return doc;
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+//			e.printStackTrace();
 			return null;
 		}
 	}
 	
 	public void crawl(String link, int level) {
 		try {
-			if (level <=5) {
+			if (level <=10) {
 				System.out.println("-------------------------------");
 				Document doc = this.crawlPage(link);
 //				System.out.println("is doc null?" + (doc == null));
@@ -64,7 +64,7 @@ public class WebCrawler {
 			}
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+//			e.printStackTrace();
 		}
 	}
 	
@@ -94,13 +94,13 @@ public class WebCrawler {
 			System.out.println("crawling");
 			this.crawl(link, 1);
 		} catch (Exception e) {
-			e.printStackTrace();
+//			e.printStackTrace();
 		}
 	}
 	
-	public static void main(String args[]) {
-		WebCrawler c = new WebCrawler("https://www.cbc.ca");
-		c.crawlLink();
-	}
+//	public static void main(String args[]) {
+//		WebCrawler c = new WebCrawler("https://www.cbc.ca");
+//		c.crawlLink();
+//	}
 
 }

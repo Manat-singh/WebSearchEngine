@@ -19,9 +19,9 @@ import java.util.regex.Pattern;
 
 public class Autocorrect {
 			
-	public static void main(String[] args) throws Exception {
+	public static void searchWords() {
 
-		System.out.println("AUTOCORRECT");
+//		System.out.println("AUTOCORRECT");
 		Autocorrect ac = new Autocorrect();
 
 		Hashtable<String, Integer> ht = new Hashtable<String, Integer>();		
@@ -191,7 +191,7 @@ public class Autocorrect {
 	
 	private void checkspelling(String S) throws IOException{
 		// TODO Auto-generated method stub
-		System.out.println("heree");
+//		System.out.println("heree");
 		String filename="dictionary.txt";
 		File file = new File(filename);
 		try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
