@@ -81,6 +81,7 @@ public class WebCrawler {
 			fileTitle += " " +t;
 		}
 		fileTitle = "CrawledPages/" + fileTitle + ".txt";
+		fileTitle = fileTitle.replace("?", "");
 		System.out.println("title: " +fileTitle);
 		PrintWriter out = new PrintWriter(fileTitle);
 		out.println(doc.text());
@@ -98,7 +99,7 @@ public class WebCrawler {
 	}
 	
 	public static void main(String args[]) {
-		WebCrawler c = new WebCrawler("https://www.bbc.ca");
+		WebCrawler c = new WebCrawler("https://www.cbc.ca");
 		c.crawlLink();
 	}
 
