@@ -25,7 +25,7 @@ public class Dictionary {
 	}
 	
 	public static void creatDictionary() {
-		File directory = new File("C:\\Users\\chall\\eclipse-workspace\\ACC\\youtubetext\\");
+		File directory = new File("CrawledPages\\");
 		String[] children = directory.list();
 		TreeMap<String,String> aListWords = new TreeMap<String,String>();
 		for (String str:children)
@@ -34,7 +34,7 @@ public class Dictionary {
 			if (strx.equals("txt"))
 			{
 				try {
-					dictionary("C:\\Users\\chall\\eclipse-workspace\\ACC\\youtubetext\\" + "/"+ str,aListWords);
+					dictionary("CrawledPages\\" + "/"+ str,aListWords);
 					FileWriter writer = new FileWriter("dictionary.txt"); 
 					for(String s: aListWords.values()) {
 					  writer.write(s + System.lineSeparator());

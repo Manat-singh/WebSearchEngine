@@ -36,7 +36,7 @@ public class Autocorrect {
 		int word_found = 0; 
 		try {
 			
-			File loc = new File("C:\\Users\\chall\\eclipse-workspace\\ACC\\youtubetext");
+			File loc = new File("CrawledPages");
 
 			File[] fileArray = loc.listFiles();
 
@@ -63,6 +63,7 @@ public class Autocorrect {
 
 				System.out.println("\nSearching Suggestions...");
 				System.out.println("\nPlease wait...");
+				ac.suggestions(input);
 
 				Dictionary.creatDictionary();
 				
@@ -190,6 +191,7 @@ public class Autocorrect {
 	
 	private void checkspelling(String S) throws IOException{
 		// TODO Auto-generated method stub
+		System.out.println("heree");
 		String filename="dictionary.txt";
 		File file = new File(filename);
 		try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
