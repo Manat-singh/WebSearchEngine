@@ -71,7 +71,7 @@ public class Autocorrect {
 
 			}
 			
-			Sorting.rankFiles(ht, word_found); // word_found == occurance of the word
+			Sorting.rankFiles(ht, word_found); // word_found == occurences of the word
 			System.out.println("\n\nDo you want to continue(yes/no)??");
 			s = sc.nextLine();	
 			if(s.equals("no")) {
@@ -119,42 +119,42 @@ public class Autocorrect {
 		return result;
 	}
 	
-	public static void spellCheck(String pattern) throws IOException{
-		//Scanner sc= new Scanner(System.in);
-//		System.out.println("Enter Word to search:");
-//		String sword=sc.nextLine();
-	
-		String filename="dictionary.txt";
-		File file = new File(filename);
-		try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
-			ArrayList<String> dictWords = new ArrayList<String>();
-			String str=null;
-			while((str= reader.readLine())!=null)
-			{
-				dictWords.add(str);
-			}
-			
-			int ed,minED=10, secMinED=10;
-			int sugWordOne=0;
-			int sugWordTwo=0;
-			for(int i = 0; i<dictWords.size();i++){
-				String dw=dictWords.get(i);
-				ed = EditDistance.editDistance(dw, pattern);
-//				System.out.println(dw+"  "+ed);
-				if(ed<secMinED) {
-					if(ed<minED) {
-						minED=ed;
-						sugWordOne=i;
-					}
-					else {
-						secMinED=ed;
-						sugWordTwo=i;
-					}
-				}
-			}
-			System.out.println("Did you mean: "+dictWords.get(sugWordOne)+" or "+dictWords.get(sugWordTwo)+"?");
-		}	
-	}
+//	public static void spellCheck(String pattern) throws IOException{
+//		//Scanner sc= new Scanner(System.in);
+////		System.out.println("Enter Word to search:");
+////		String sword=sc.nextLine();
+//	
+//		String filename="dictionary.txt";
+//		File file = new File(filename);
+//		try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+//			ArrayList<String> dictWords = new ArrayList<String>();
+//			String str=null;
+//			while((str= reader.readLine())!=null)
+//			{
+//				dictWords.add(str);
+//			}
+//			
+//			int ed,minED=10, secMinED=10;
+//			int sugWordOne=0;
+//			int sugWordTwo=0;
+//			for(int i = 0; i<dictWords.size();i++){
+//				String dw=dictWords.get(i);
+//				ed = EditDistance.editDistance(dw, pattern);
+////				System.out.println(dw+"  "+ed);
+//				if(ed<secMinED) {
+//					if(ed<minED) {
+//						minED=ed;
+//						sugWordOne=i;
+//					}
+//					else {
+//						secMinED=ed;
+//						sugWordTwo=i;
+//					}
+//				}
+//			}
+//			System.out.println("Did you mean: "+dictWords.get(sugWordOne)+" or "+dictWords.get(sugWordTwo)+"?");
+//		}	
+//	}
 	
 	private int wordSearch(File file, String input) throws IOException{
 		// TODO Auto-generated method stub
